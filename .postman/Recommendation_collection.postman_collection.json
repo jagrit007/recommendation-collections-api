@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "7185316b-295b-469d-8de6-3a06f56d4156",
+		"name": "Recommendation collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12366200"
+	},
+	"item": [
+		{
+			"name": "Add a recommendation to a collection",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 5,\n    \"recommendationId\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/collections/1/recommendations",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collections",
+						"1",
+						"recommendations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove a recommendation from a collection",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/collections/1/recommendations/10",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collections",
+						"1",
+						"recommendations",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View recommendations of a collection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/collections/1/recommendations?userId=5&page=1&limit=10",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collections",
+						"1",
+						"recommendations"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all collections with their recommendations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/collections?userId=5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"collections"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
